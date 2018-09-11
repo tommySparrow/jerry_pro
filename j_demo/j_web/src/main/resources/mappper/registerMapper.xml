@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.open.mappers.RegisterMapper">
+
+    <insert id="registerUser" parameterType="com.open.javabean.User">
+
+        insert into user(tel,name,password ) values (#{tel },#{name },#{password })
+
+    </insert>
+</mapper>
