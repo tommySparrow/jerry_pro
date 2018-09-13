@@ -4,9 +4,22 @@
 
 <mapper namespace="com.open.mappers.RegisterMapper">
 
+    <!--返回参数设置-->
+    <resultMap id="resMap" type="com.open.javabean.User">
+        <id column="id" property="id" />
+        <result column="tel" property="tel" />
+        <result column="name" property="name" />
+        <result column="password" property="password" />
+    </resultMap>
+
+    <!--注册用户-->
     <insert id="registerUser" parameterType="com.open.javabean.User">
-
         insert into user(tel,name,password ) values (#{tel },#{name },#{password })
-
     </insert>
+
+    <!--查询用户-->
+    <select id="seachByTelAndName" resultMap="resMap">
+        select * from user u where u .tel = #{tel } or u .name = #{name }
+    </select>
+
 </mapper>

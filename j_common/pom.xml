@@ -113,6 +113,7 @@
             <artifactId>mybatis-spring</artifactId>
             <version>${mybatis-spring.version}</version>
         </dependency>
+        <!--分页插件-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>

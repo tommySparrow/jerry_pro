@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -41,6 +42,16 @@ public class RegisterUserImpl implements RegisterUserService {
         } catch (MyException e) {
             e.printStackTrace();
             throw new MyException("字段类型不得为空!");
+        }
+
+        //已经使用过的手机号、用户名不再允许注册
+        String tel = user.getTel();
+        String name = user.getName();
+        List<User> userList = registerMapper.seachByTelAndName(tel, name);
+
+        if (userList.size() > 0){
+            logger.info(userList.toString());
+            throw new MyException("注册的用户信息已存在,请核对申请的信息!");
         }
 
         String password = user.getPassword();

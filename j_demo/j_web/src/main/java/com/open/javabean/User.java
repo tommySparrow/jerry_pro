@@ -1,15 +1,23 @@
 package com.open.javabean;
 
+import javax.persistence.*;
+
 /**
  * @ Author     ：jmyang
  * @ Date       ：Created in 2018/9/11
  * @ Description：
  * @ throws
  */
+@Table(name = "user")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "tel")
     private String tel;
+    @Column(name = "name")
     private String name;
+    @Column(name = "password")
     private String password;
 
     public User() {
