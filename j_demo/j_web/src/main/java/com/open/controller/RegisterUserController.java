@@ -1,5 +1,6 @@
 package com.open.controller;
 
+import com.open.exception.MyException;
 import com.open.javabean.User;
 import com.open.services.RegisterUserService;
 import org.slf4j.Logger;
@@ -25,7 +26,7 @@ public class RegisterUserController {
     private RegisterUserService registerUserService;
 
     @RequestMapping("/registerUser")
-    public int registerUser(@RequestBody User user){
+    public int registerUser(@RequestBody User user) throws MyException {
         logger.info("用户:"+user);
         int i = registerUserService.registerUser(user);
         return i;

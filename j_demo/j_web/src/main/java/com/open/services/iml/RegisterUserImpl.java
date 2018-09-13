@@ -29,7 +29,7 @@ public class RegisterUserImpl implements RegisterUserService {
     private RegisterMapper registerMapper;
 
     @Override
-    public int registerUser(User user) {
+    public int registerUser(User user) throws MyException {
 
         Map<String, Object> map = new HashMap<>();
         map.put("tel", user.getTel());
@@ -40,6 +40,7 @@ public class RegisterUserImpl implements RegisterUserService {
             Validator.registerValitor(map);
         } catch (MyException e) {
             e.printStackTrace();
+            throw new MyException("字段类型不得为空!");
         }
 
         String password = user.getPassword();
