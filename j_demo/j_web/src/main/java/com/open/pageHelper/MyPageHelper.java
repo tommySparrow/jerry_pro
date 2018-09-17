@@ -29,7 +29,7 @@ public class MyPageHelper {
 
     /**
      *
-     * @author chenmc 
+     * @author jm
      * @date 2018/9/17
      * @param [pageNum, pageSize, map] 
      * @return com.github.pagehelper.PageInfo<com.open.javabean.User>
