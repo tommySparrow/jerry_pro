@@ -16,7 +16,10 @@
             <!--<artifactId>pagehelper</artifactId>-->
             <!--<version>版本号</version>-->
         <!--</dependency>-->
-        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--<!–分页参数合理化  –>-->
+            <property name="reasonable" value="true"/>
+        </plugin>
 
         <!-- 通用Mapper -->
         <plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">

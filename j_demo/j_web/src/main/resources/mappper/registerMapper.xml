@@ -22,4 +22,9 @@
         select * from user u where u .tel = #{tel } or u .name = #{name }
     </select>
 
+    <!--查询所有用户-->
+    <select id="getAll" resultMap="resMap">
+        select * from user
+    </select>
+
 </mapper>

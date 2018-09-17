@@ -23,4 +23,9 @@ public interface RegisterMapper extends Mapper<User> {
      */
     List<User> seachByTelAndName(@Param("tel") String tel, @Param("name")String name);
 
+    /**
+     * 查询所有用户
+     */
+    List<User> getAll();
+
 }
