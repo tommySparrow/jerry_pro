@@ -5,6 +5,7 @@ import com.open.services.MailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import javax.mail.*;
@@ -18,6 +19,7 @@ import java.util.Properties;
  * @Date: 2018/8/29 16:20
  */
 @Service
+@PropertySource("classpath:application.properties")
 public class MailServiceImpl implements MailService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MailServiceImpl.class);
