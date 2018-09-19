@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/npm.js"></script>
+</head>
+
+<script>
+    function jump(){
+        window.location.href="register.html";
+    }
+</script>
+
+<body>
+
+<form action="/loginUser">
+    name:<br>
+    <input type="text" name="name">
+    <br>
+    password:<br>
+    <input type="password" name="password">
+    <br><br>
+    登录:<input type="submit" value="Submit">
+</form>
+<br><br>
+
+<input type="button" value="注册" onclick=jump()>
+
+</body>
+</html>

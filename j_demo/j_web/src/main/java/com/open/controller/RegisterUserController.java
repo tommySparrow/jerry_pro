@@ -6,7 +6,6 @@ import com.open.services.RegisterUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @ Description：注册
  * @ throws
  */
-@RestController
 @RequestMapping
+@RestController
 public class RegisterUserController {
 
     public static final Logger logger = LoggerFactory.getLogger(RegisterUserController.class);
@@ -26,7 +25,7 @@ public class RegisterUserController {
     private RegisterUserService registerUserService;
 
     @RequestMapping("/registerUser")
-    public int registerUser(@RequestBody User user) throws MyException {
+    public int registerUser( User user) throws MyException {
         logger.info("用户:"+user);
         int i = registerUserService.registerUser(user);
         return i;
