@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.open.mappers.RecordMapper">
+
+    <!--返回参数设置-->
+    <resultMap id="res2Map" type="com.open.javabean.Record">
+        <id column="id" property="id" />
+        <result column="account" property="account" />
+        <result column="password" property="password" />
+        <result column="des" property="des" />
+        <result column="company" property="company" />
+    </resultMap>
+
+    <!--查询所有用户-->
+    <select id="getAllRecord" resultMap="res2Map">
+        select * from RECORD
+    </select>
+
+</mapper>
