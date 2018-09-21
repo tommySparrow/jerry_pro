@@ -20,6 +20,15 @@ import java.io.OutputStream;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @ Author     ：jmyang
+ * @ Date       ：Created in 2018/9/21
+ * @ Description：导出表格工具类
+ * sheetName 表格sheet名和标题名
+ * dataList 从数据表中获取的数据
+ * headers 表格表头
+ * exportExcelName 表名
+ */
 public class ExcelUtil {
 
     public  static String  exportExcel(String sheetName, List<?> dataList,
