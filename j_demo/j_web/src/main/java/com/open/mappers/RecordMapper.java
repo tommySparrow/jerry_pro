@@ -2,6 +2,7 @@ package com.open.mappers;
 
 import com.github.abel533.mapper.Mapper;
 import com.open.javabean.Record;
+import com.open.test.uniteEntity.EntityResponse;
 
 import java.util.List;
 
@@ -13,4 +14,7 @@ import java.util.List;
  */
 public interface RecordMapper extends Mapper<Record> {
    List<Record> getAllRecord();
+
+   //测试联合查询
+   List<EntityResponse> getUnite(String age);
 }

@@ -5,12 +5,14 @@
 <mapper namespace="com.open.mappers.RecordMapper">
 
     <!--返回参数设置-->
-    <resultMap id="res2Map" type="com.open.javabean.Record">
+    <!--使用java.util.Map封装要统一返回的值-->
+    <resultMap id="res2Map" type="java.util.Map">
         <id column="id" property="id" />
         <result column="account" property="account" />
         <result column="password" property="password" />
         <result column="des" property="des" />
         <result column="company" property="company" />
+        <result column="age" property="age" />
     </resultMap>
 
     <!--查询所有用户-->
@@ -18,4 +20,15 @@
         select * from RECORD
     </select>
 
+    <!--join联合查询-->
+    <select id="getUnite" resultMap="res2Map">
+    SELECT
+	R. ACCOUNT,
+	T .age
+    FROM
+	RECORD R
+    LEFT JOIN TEST T ON R. ID = T . ID
+    WHERE
+	T.age = #{age }
+    </select>
 </mapper>
