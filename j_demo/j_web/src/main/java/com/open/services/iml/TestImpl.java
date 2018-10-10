@@ -26,9 +26,6 @@ public class TestImpl implements TestService {
     @Override
     public List<Stu> getAll() {
 
-        logger.info(" info成功了");
-        logger.debug(" debug成功了");
-        logger.error(" erro成功了");
         List<Stu> stuList = testMapper.getAll();
         return stuList;
 

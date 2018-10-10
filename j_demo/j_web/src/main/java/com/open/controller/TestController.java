@@ -23,7 +23,7 @@ public class TestController {
     @RequestMapping("/test")
     public List<Stu> test(){
         List<Stu> stuList = testService.getAll();
-        System.out.println();
+        System.out.println("heihei///");
         return stuList;
     }
 
