@@ -37,8 +37,4 @@
     <context:component-scan base-package="com.open"/>
     <!--解决HTML被拦击-->
     <mvc:default-servlet-handler/>
-
-    <!-- 开启对 @Aspect 的支持--><!--解决写的AOP不起作用的问题-->
-    <aop:aspectj-autoproxy/>
-
 </beans>
