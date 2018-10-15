@@ -36,9 +36,9 @@ public class ExcelUtil {
 
         String tmpPath = null;
 
-        // 声明一个工作薄
+        // 1.声明一个工作薄
         XSSFWorkbook workbook = new XSSFWorkbook();
-        // 生成一个表格
+        // 2.生成一个表格
         XSSFSheet sheet = workbook.createSheet(sheetName);
         // 设置表格默认列宽度为15个字节
         sheet.setDefaultColumnWidth(15);
@@ -52,14 +52,14 @@ public class ExcelUtil {
         XSSFCellStyle titleStyle = workbook.createCellStyle();
         setTitleStyle(titleStyle, workbook);
 
-        // 产生表格标题行
+        // 3.产生表格标题行
         XSSFRow titleRow = sheet.createRow(0);
         sheet.addMergedRegion(new CellRangeAddress(0,1,0,headers.size()-1));
         XSSFCell titleCell = titleRow.createCell(0);
         titleCell.setCellStyle(titleStyle);
         titleCell.setCellValue(exportExcelName);
 
-        //设置字段行
+        //4.设置字段行(标题行)
         XSSFRow row = sheet.createRow(2);
         for (short i = 0; i < headers.size(); i++) {
             XSSFCell cell = row.createCell(i);
@@ -68,7 +68,7 @@ public class ExcelUtil {
             cell.setCellValue(text);
         }
 
-        // 遍历集合数据，产生数据行
+        // 5.遍历集合数据，产生数据行
         if (dataList != null || dataList.size()>0) {
             for (int j=0;j<dataList.size();j++){
                 row = sheet.createRow(j+3);
