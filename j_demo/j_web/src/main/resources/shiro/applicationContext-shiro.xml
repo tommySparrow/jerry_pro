@@ -37,9 +37,18 @@
     <bean id="securityManager"
           class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <!-- 在安全管理器，应该注入 Realm 连接安全数据  -->
+        <property name="realm" ref="shiroDbRealm"/>
+        <!--二级缓存-->
+        <property name="cacheManager" ref="shiroEhcacheManager" />
     </bean>
 
     <!--第二步-->
+    <!-- realm创建 -->
+    <bean id="shiroDbRealm" class="com.open.shiro.shiroDbRealm"/>
 
-
+    <!--第三步-->
+    <!-- 用户授权信息Cache, 采用EhCache -->
+    <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:shiroCache/ehcache-shiro.xml"/>
+    </bean>
 </beans>
