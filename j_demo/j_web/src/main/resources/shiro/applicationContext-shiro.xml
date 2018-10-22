@@ -27,6 +27,7 @@
                 /json/** = anon
                 /login.jsp** = anon
                 /index.jsp** = authc
+                <!--anon 可匿名访问 authc 认证后才可以访问-->
                 <!--除了上述配置 其他资源必须需要身份认证 (登陆)-->
                 /** = authc
             </value>
