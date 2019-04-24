@@ -6,13 +6,12 @@
 
     <!--返回参数设置-->
     <!--使用java.util.Map封装要统一返回的值-->
-    <resultMap id="res2Map" type="java.util.Map">
+    <resultMap id="res2Map" type="com.open.javabean.Record">
         <id column="id" property="id" />
         <result column="account" property="account" />
         <result column="password" property="password" />
         <result column="des" property="des" />
         <result column="company" property="company" />
-        <result column="age" property="age" />
     </resultMap>
 
     <!--查询所有用户-->
