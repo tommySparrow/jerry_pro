@@ -34,7 +34,7 @@ public class ExcelUtil {
     public  static String  exportExcel(String sheetName, List<?> dataList,
                                        List<String> headers,String exportExcelName) {
 
-        String tmpPath = null;
+        String tmpPath = null;//下载路径
 
         // 1.声明一个工作薄
         XSSFWorkbook workbook = new XSSFWorkbook();
@@ -53,11 +53,11 @@ public class ExcelUtil {
         setTitleStyle(titleStyle, workbook);
 
         // 3.产生表格标题行
-        XSSFRow titleRow = sheet.createRow(0);
-        sheet.addMergedRegion(new CellRangeAddress(0,1,0,headers.size()-1));
+        XSSFRow titleRow = sheet.createRow(0);//创建第一行
+        sheet.addMergedRegion(new CellRangeAddress(0,1,0,headers.size()-1));//根据列名的长度合并
         XSSFCell titleCell = titleRow.createCell(0);
         titleCell.setCellStyle(titleStyle);
-        titleCell.setCellValue(exportExcelName);
+        titleCell.setCellValue(exportExcelName);//表格标头
 
         //4.设置字段行(标题行)
         XSSFRow row = sheet.createRow(2);
@@ -76,7 +76,7 @@ public class ExcelUtil {
                 JSONObject data = JSONObject.fromObject(jsonStr);
                 Iterator<String> keys = data.keys();
                 int i = 0;
-                while (keys.hasNext()) {
+                while (keys.hasNext()) {//赋值每个单元格
                     String key = keys.next();
                     Object val = data.get(key);
                     XSSFCell cell = row.createCell(i);
